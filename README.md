@@ -1,41 +1,49 @@
-import streamlit as st
-import pandas as pd
-import plotly.express as px
-import plotly.graph_objects as go
-from gtts import gTTS
-import os
-import speech_recognition as sr
-import base64
-import mysql.connector
-import matplotlib.pyplot as plt
-import random
-from PIL import Image
-import random
-from time import time
-from random import randint, shuffle 
-from datetime import datetime 
-import pickle
-import bisect 
-from groq import Groq
-from num2words import num2words  # Convert numbers to words# 
+Note:
+If you are using this code, make sure you have downloaded all the image files and the JSON file and placed them in the same folder as this code. If you're encountering any errors, it might be due to incorrect file paths. In that case, please copy and paste the correct image file path into the variable and ensure the files are in the correct order.
 
-install this all dependent library in python 
+This project requires several Python libraries for proper execution. Below is a list of the libraries that need to be installed in order to run the code successfully.
+
+Libraries Required:
+
 streamlit
-pandas 
-plotly.express
-plotly.graph_objects
-gtts
-speech_recognition 
-base64
-MySQL 
-MySQL.connector 
-matplotlib.pyplot
-random 
-pil
-pickle
-bisect
-grow
-num2words
-  
 
-run this code type command in terminal steamlit run final8.py
+pandas
+
+plotly
+
+gtts
+
+speech_recognition
+
+base64
+
+mysql-connector-python
+
+matplotlib
+
+Pillow
+
+random
+
+time
+
+datetime
+
+pickle
+
+bisect
+
+groq
+
+num2words
+
+json
+
+Note:
+
+To run the app, please open your terminal and navigate to the directory where your code is located. Then, execute the following command:
+
+streamlit run final12.py
+
+This will launch the app in your default web browser.
+
