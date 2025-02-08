@@ -318,7 +318,7 @@ def update_signup_table(child_name, age, parent_name, password, phone, gmail, us
         # Create the table if it doesn't exist
         cursor.execute("""
             CREATE TABLE IF NOT EXISTS child_details (
-                id INT AUTO_INCREMENT PRIMARY KEY,
+                child_id INT AUTO_INCREMENT PRIMARY KEY,
                 child_name VARCHAR(255) NOT NULL,
                 age INT NOT NULL,
                 parent_name VARCHAR(255) NOT NULL,
