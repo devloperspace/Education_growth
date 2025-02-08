@@ -508,6 +508,10 @@ if st.session_state.log == 2:
             if st.button("Go to Dashboard"):
                 st.session_state["dashboard_active"] = True
 
+           #Back Button
+            if st.button("Back", key="Back"):
+                st.session_state["current_index"] = (current_index - 1) % len(letters)
+
 
   
 
