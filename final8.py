@@ -471,41 +471,45 @@ if st.session_state.log == 2:
             # Change the color of the username (right side)
 
     option = st.selectbox("Choose an activity:", ["Select", "Learn ABC", "Play Counting Game","Maths for kids","Animal Learning","Freedom Fighters","Progress Report"])
-    if option == "Learn ABC":
-        if st.session_state["dashboard_active"]:
-            
-            st.subheader("Dashboard")
-            st.write("Welcome to the dashboard!")
-            alpha_dashboard_page()
-            if st.button("Back to Learn ABC"):
-                st.session_state["dashboard_active"] = False
-        else:
-            st.subheader("Learn ABC")
-            current_index = st.session_state["current_index"]
+   if option == "Learn ABC":
+    if st.session_state["dashboard_active"]:
+        
+        st.subheader("Dashboard")
+        st.write("Welcome to the dashboard!")
+        alpha_dashboard_page()
+        if st.button("Back to Learn ABC"):
+            st.session_state["dashboard_active"] = False
+    else:
+        st.subheader("Learn ABC")
+        current_index = st.session_state["current_index"]
 
-            # Display current word and image
-            letter, word, image_url = letters[current_index]
-            st.image(image_url, caption=f"{letter} for {word}", width=300)
-            st.write(f"### **{word}**")
+        # Display current word and image
+        letter, word, image_url = letters[current_index]
+        st.image(image_url, caption=f"{letter} for {word}", width=300)
+        st.write(f"### **{word}**")
 
-            # Text-to-speech button (Listen to the word)
-            audio_file = f"{word.lower()}_audio.mp3"
-            if not os.path.exists(audio_file):
-                generate_audio(word, audio_file)
-            if st.button("🔊 Listen to the word", key=f"listen_word_{current_index}"):
-                st.audio(audio_file)
+        # Text-to-speech button (Listen to the word)
+        audio_file = f"{word.lower()}_audio.mp3"
+        if not os.path.exists(audio_file):
+            generate_audio(word, audio_file)
+        if st.button("🔊 Listen to the word", key=f"listen_word_{current_index}"):
+            st.audio(audio_file)
 
-            # Speech recognition button to check if the user spoke the word correctly
-            if st.button("🎤 Speak the word", key=f"speak_word_{current_index}"):
-                check_spoken_word(word)
+        # Speech recognition button to check if the user spoke the word correctly
+        if st.button("🎤 Speak the word", key=f"speak_word_{current_index}"):
+            check_spoken_word(word)
 
-            # Next button to move to the next letter
-            if st.button("Next", key="next"):
-                st.session_state["current_index"] = (current_index + 1) % len(letters)
+        # Next button to move to the next letter
+        if st.button("Next", key="next"):
+            st.session_state["current_index"] = (current_index + 1) % len(letters)
 
-            # Button to navigate to the dashboard
-            if st.button("Go to Dashboard"):
-                st.session_state["dashboard_active"] = True
+        # Button to navigate to the dashboard
+        if st.button("Go to Dashboard"):
+            st.session_state["dashboard_active"] = True
+
+        # Button to navigate to the previous letter (Back button)
+        if st.button("Back", key="back"):
+            st.session_state["current_index"] = (current_index - 1) % len(letters)
 
 
   
