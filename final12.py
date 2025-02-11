@@ -1053,10 +1053,10 @@ if st.session_state.log == 2:
 
                     update_mysql_table(selected_animal_name, is_correct, category)
                     
-            num_characteristics = st.selectbox("Select number of characteristics to display:", list(range(2, 21)))
+            num_characteristics = st.selectbox("Select number of characteristics to display:", list(range(1, 21)))
             st.session_state.num_characteristics = num_characteristics
 
-            st.subheader(f"{selected_animal_name} Characteristics:")
+            st.subheader(f"{selected_animal_name} characteristics:")
             characteristics = fetch_characteristics(selected_animal_name, num_characteristics)
             if characteristics:
                 for char in characteristics:
